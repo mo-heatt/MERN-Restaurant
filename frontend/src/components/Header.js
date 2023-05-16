@@ -13,7 +13,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const handleShowMenu = () => {
-    setShowMenu((preve) => !preve);
+    setShowMenu((previousValue) => !previousValue);
   };
   const handleLogout = () => {
     dispatch(logoutRedux());
@@ -49,11 +49,7 @@ const Header = () => {
           </div>
           <div className=" text-slate-600" onClick={handleShowMenu}>
             <div className="text-3xl cursor-pointer w-8 h-8 rounded-full overflow-hidden drop-shadow-md">
-              {userData.image ? (
-                <img src={userData.image} className="h-full w-full" />
-              ) : (
-                <HiOutlineUserCircle />
-              )}
+              {userData.image ? (<img src={userData.image} className="h-full w-full" />) : (<HiOutlineUserCircle />)}
             </div>
             {showMenu && (
               <div className="absolute right-2 bg-white py-2  shadow drop-shadow-md flex flex-col min-w-[120px] text-center">
@@ -108,3 +104,4 @@ const Header = () => {
     </header>
   );
 };
+export default Header;

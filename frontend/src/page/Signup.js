@@ -39,9 +39,9 @@ function Signup() {
       const data = await ImagetoBase64(e.target.files[0])
   
 
-      setData((preve)=>{
+      setData((previous)=>{
           return{
-            ...preve,
+            ...previous,
             image : data
           }
       })

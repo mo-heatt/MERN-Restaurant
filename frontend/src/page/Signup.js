@@ -19,10 +19,10 @@ function Signup() {
   });
 
   const handleShowPassword = () => {
-    setShowPassword((preve) => !preve);
+    setShowPassword((previous) => !previous);
   };
   const handleShowConfirmPassword = () => {
-    setShowConfirmPassword((preve) => !preve);
+    setShowConfirmPassword((previous) => !previous);
   };
 
   const handleOnChange = (e) => {

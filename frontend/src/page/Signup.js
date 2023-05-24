@@ -68,7 +68,7 @@ console.log(process.env.REACT_APP_SERVER_DOMIN)
         // alert(dataRes.message);
         toast(dataRes.message)
         if(dataRes.alert){
-          navigate("/login");
+          navigate("/login"); //after sucessfully logging in go to login page
         }
        
       } else {

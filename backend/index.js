@@ -6,7 +6,7 @@ const Stripe = require('stripe')
 
 const app = express();
 app.use(cors());
-app.use(express.json({ limit: "10mb" }));
+app.use(express.json({ limit: "10mb" }));  //data we are sending using fetch request is too large because of uploading the image so thats why setting the limit
 
 const PORT = process.env.PORT || 8080;
 
@@ -48,10 +48,10 @@ app.post("/signup", async (req, res) => {
     console.log(err);
     if (result) {
       res.send({ message: "Email id is already register", alert: false });
-    } else {
-      const data = userModel(req.body);
+    } else { //if not registered save it in database
+      const data = userModel(req.body); //just req.body because key names are similar in the signup page and in the userSchema
       const save = data.save();
-      res.send({ message: "Successfully sign up", alert: true });
+      res.send({ message: "Successfully signed up", alert: true });
     }
   });
 });

@@ -56,21 +56,21 @@ console.log(process.env.REACT_APP_SERVER_DOMIN)
     
           const fetchData = await fetch(`${process.env.REACT_APP_SERVER_DOMIN}/signup`,{
             method : "POST",
-            headers : {
+            headers : {  //Headers contain additional information about the request
               "content-type" : "application/json"
             },
-            body : JSON.stringify(data)
+            body : JSON.stringify(data)  //The body of an HTTP request carries the data being sent to the server
           })
-
+     
+          //Whenever some data comes from an API we have to convert it to json
           const dataRes = await fetchData.json()
-    
 
         // alert(dataRes.message);
-        toast(dataRes.message)
+        toast(dataRes.message);
+
         if(dataRes.alert){
           navigate("/login"); //after sucessfully logging in go to login page
         }
-       
       } else {
         alert("password and confirm password not equal");
       }

@@ -73,7 +73,7 @@ app.post("/login", (req, res) => {
       res.send({
         message: "Login is successfully",
         alert: true,
-        data: dataSend,
+        data: dataSend,  //data is sent from here and captured in userSlice for state Management
       });
     } else {
       res.send({

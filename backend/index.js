@@ -47,7 +47,7 @@ app.post("/signup", async (req, res) => {
     // console.log(result);
     console.log(err);
     if (result) {
-      res.send({ message: "Email id is already register", alert: false });
+      res.send({ message: "Email id is already registered", alert: false });
     } else { //if not registered save it in database
       const data = userModel(req.body); //just req.body because key names are similar in the signup page and in the userSchema
       const save = data.save();

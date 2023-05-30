@@ -30,7 +30,7 @@ export const userSlice = createSlice({
     },
   },
 });
-
+ 
 export const { loginRedux ,logoutRedux} = userSlice.actions;
 
 export default userSlice.reducer;

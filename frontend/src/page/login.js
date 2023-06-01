@@ -17,7 +17,6 @@ const Login = () => {
   const navigate = useNavigate()  
   const userData = useSelector(state => state)
 
-
   const dispatch = useDispatch();
 
   const handleShowPassword = () => {
@@ -52,12 +51,11 @@ const Login = () => {
       toast(dataRes.message)
       
       if(dataRes.alert){
-        dispatch(loginRedux(dataRes))
+        dispatch(loginRedux(dataRes)) //changing state with dataRes in userSlice
         setTimeout(() => {
           navigate("/")
         }, 1000);
       }
-
       console.log(userData)
     }
     else{

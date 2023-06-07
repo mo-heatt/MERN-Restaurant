@@ -55,7 +55,8 @@ const Newproduct = () => {
   
       console.log(fetchRes)
       toast(fetchRes.message)
-
+    
+      //after uploading set to default
       setData(()=>{
         return{
           name : "",

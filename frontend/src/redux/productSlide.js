@@ -18,7 +18,7 @@ export const productSlice = createSlice({
       if (check) {
         toast("Already Item in Cart");
       } else {
-        toast("Item Add successfully");
+        toast("Item Added successfully");
         const total = action.payload.price;
         state.cartItem = [
           ...state.cartItem,
@@ -37,7 +37,6 @@ export const productSlice = createSlice({
       let qty = state.cartItem[index].qty;
       const qtyInc = ++qty;
       state.cartItem[index].qty = qtyInc;
-
       const price = state.cartItem[index].price;
       const total = price * qtyInc;
 

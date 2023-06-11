@@ -59,7 +59,7 @@ app.post("/signup", async (req, res) => {
 //api login
 app.post("/login", (req, res) => {
   // console.log(req.body);
-  const { email } = req.body;
+  const { email } = req.body; 
   userModel.findOne({ email: email }, (err, result) => {
     if (result) {
       const dataSend = {
